@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "deciflow"
 dynamic = ["version"]
-description = "Streaming log classification with Laya and Jev"
+description = "Reviewable AI decisions for logs and conversations with Laya and Jev"
 readme = "README.md"
 license = {file = "LICENSE"}
 requires-python = ">=3.11"

@@ -2,11 +2,11 @@
   <a href="https://youtu.be/WpRIM6wLN8k" target="_blank" rel="noopener noreferrer"><img src="images/DeciFlow-Logo.png" alt="DeciFlow" width="480"></a>
 </p>
 
-# DeciFlow
+# DeciFlow — 로그와 상담 기록을 위한 AI 판정 자동화
 
 [English](README.md) | [한국어](README.ko.md)
 
-**다양한 데이터를 AI로 빠르게 판단하고 결과에 따른 후속 처리까지 자유롭게 자동화하세요.**
+**Laya 또는 Jev로 분류하고, 점수를 산출하고, 검토하고, Python Action을 실행하세요.**
 
 <p align="left">
   <a href="https://youtu.be/WpRIM6wLN8k" target="_blank" rel="noopener noreferrer">Demo Video - YouTube</a>

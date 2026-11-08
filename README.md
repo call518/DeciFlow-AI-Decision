@@ -2,11 +2,11 @@
   <a href="https://youtu.be/WpRIM6wLN8k" target="_blank" rel="noopener noreferrer"><img src="images/DeciFlow-Logo.png" alt="DeciFlow" width="480"></a>
 </p>
 
-# DeciFlow
+# DeciFlow — AI Decision Automation for Logs and Conversations
 
 [English](README.md) | [한국어](README.ko.md)
 
-**Make fast AI decisions across diverse datasets and automate follow-up workflows your way.**
+**Classify, score, review, and run Python Actions with Laya or Jev.**
 
 <p align="left">
   <a href="https://youtu.be/WpRIM6wLN8k" target="_blank" rel="noopener noreferrer">Demo Video - YouTube</a>
