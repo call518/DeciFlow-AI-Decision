@@ -8,25 +8,9 @@
 
 **Classify, score, review, and run Python Actions with Laya or Jev.**
 
-<p align="left">
-  <a href="https://youtu.be/WpRIM6wLN8k" target="_blank" rel="noopener noreferrer">Demo Video - YouTube</a>
-</p>
+[![DeciFlow classifying logs and showing reviewable results](images/DeciFlow-Demo-Screenshot-2026-10-11-034530.png)](https://youtu.be/WpRIM6wLN8k)
 
-**[Installation and Configuration → INSTALL.md](INSTALL.md)**
-
-Choose one installation method:
-
-- [PyPI: pip or uv tool](INSTALL.md#pypi)
-- [Docker Compose with Git Clone](INSTALL.md#docker-compose)
-- [CLI from a Git Checkout](INSTALL.md#direct-processes)
-
-The installation guide covers prerequisites, engine connections, storage,
-authentication, startup, verification, and maintenance for each method.
-
-- **Configuration:** CLI, direct server startup, and `compose.sh` read only the file selected by `DECIFLOW_ENV_PATH`.
-- **Initialization:** `deciflow init` creates `~/.config/deciflow/.env`; export its path before running DeciFlow.
-- **Reference:** see [configuration](docs/configuration.md#environment-file-locations).
-
+[Watch the demo video on YouTube →](https://youtu.be/WpRIM6wLN8k)
 
 ## Overview
 
@@ -39,6 +23,34 @@ new log events.
 - **Laya server:** runs the decision model on the same host or a separate host. DeciFlow nodes connected to a shared Laya server need no local GPU or PyTorch.
 - **Jev:** alternative paid hosted inference API. DeciFlow reads the data and sends events to the selected engine; Laya is the default, with no automatic fallback to paid Jev.
 - **OAuth2-Proxy:** optional Google sign-in and HTTPS.
+
+## From Input to Action
+
+| Step | What DeciFlow Does |
+| --- | --- |
+| Input | Reads text logs or structured conversations from local, SSH, or HDFS Sources. |
+| Decision | Applies your Criteria to produce typed `choice`, `score`, or `noul` results. |
+| Review | Keeps the source text, probabilities, provider response, and human corrections together. |
+| Action | Optionally runs Python code after classification and records the outcome. |
+
+Unlike a log search or summarization tool, DeciFlow turns explicit Criteria into
+structured, reviewable decisions. Use the same Task model for historical Batch
+investigations and Realtime monitoring.
+
+## Installation
+
+Choose one installation method in **[Installation and Configuration →](INSTALL.md)**
+
+- [PyPI: pip or uv tool](INSTALL.md#pypi)
+- [Docker Compose with Git Clone](INSTALL.md#docker-compose)
+- [CLI from a Git Checkout](INSTALL.md#direct-processes)
+
+The installation guide covers prerequisites, engine connections, storage,
+authentication, startup, verification, and maintenance for each method.
+
+- **Configuration:** CLI, direct server startup, and `compose.sh` read only the file selected by `DECIFLOW_ENV_PATH`.
+- **Initialization:** `deciflow init` creates `~/.config/deciflow/.env`; export its path before running DeciFlow.
+- **Reference:** see [configuration](docs/configuration.md#environment-file-locations).
 
 
 ## Concepts

@@ -8,24 +8,9 @@
 
 **Laya 또는 Jev로 분류하고, 점수를 산출하고, 검토하고, Python Action을 실행하세요.**
 
-<p align="left">
-  <a href="https://youtu.be/WpRIM6wLN8k" target="_blank" rel="noopener noreferrer">Demo Video - YouTube</a>
-</p>
+[![로그를 분류하고 검토 가능한 결과를 보여 주는 DeciFlow](images/DeciFlow-Demo-Screenshot-2026-10-11-034530.png)](https://youtu.be/WpRIM6wLN8k)
 
-**[설치와 설정 → INSTALL.ko.md](INSTALL.ko.md)**
-
-설치 방식 하나를 선택하세요.
-
-- [PyPI: pip 또는 uv tool](INSTALL.ko.md#pypi)
-- [Docker Compose + Git Clone](INSTALL.ko.md#docker-compose)
-- [Git 저장소에서 CLI 실행](INSTALL.ko.md#direct-processes)
-
-설치 가이드는 방식별 요구사항·엔진 연결·저장 경로·인증·기동·검증·유지 관리를 설명합니다.
-
-- **설정 파일:** CLI·서버 직접 실행·`compose.sh`는 `DECIFLOW_ENV_PATH`에 지정한 파일만 읽습니다.
-- **초기화:** `deciflow init`은 `~/.config/deciflow/.env`를 생성합니다. 실행 전에 이 경로를 export하세요.
-- **상세 안내:** [설정 안내](docs/configuration.ko.md#환경-파일-위치)를 참고하세요.
-
+[YouTube에서 데모 영상 보기 →](https://youtu.be/WpRIM6wLN8k)
 
 ## 소개
 
@@ -37,6 +22,33 @@
 - **Laya 서버:** 같은 호스트 또는 별도 호스트에서 판정 모델을 실행합니다. 공용 Laya 서버에 연결하는 DeciFlow 노드에는 로컬 GPU나 PyTorch가 필요하지 않습니다.
 - **Jev:** 대안으로 사용할 수 있는 유료 호스팅 추론 API입니다. DeciFlow가 데이터를 읽고 선택한 엔진으로 이벤트를 보냅니다. 기본 엔진은 Laya이며 유료 Jev로 자동 전환하지 않습니다.
 - **OAuth2-Proxy:** 선택적으로 Google 로그인과 HTTPS를 제공합니다.
+
+## 입력부터 후속 동작까지
+
+| 단계 | DeciFlow의 처리 |
+| --- | --- |
+| 입력 | 로컬·SSH·HDFS Source에서 텍스트 로그나 구조화된 상담 기록을 읽습니다. |
+| 판정 | Criteria를 적용해 타입이 있는 `choice`·`score`·`noul` 결과를 생성합니다. |
+| 검토 | 원문·확률·공급자 응답·사람의 정정을 함께 보존합니다. |
+| 후속 동작 | 선택적으로 분류 후 Python 코드를 실행하고 결과를 기록합니다. |
+
+DeciFlow는 로그 검색이나 요약에 그치지 않고 명시적인 Criteria를 구조화되고
+검토 가능한 판정으로 변환합니다. 같은 Task 모델로 과거 데이터의 Batch 조사와
+Realtime 감시를 수행합니다.
+
+## 설치
+
+**[설치와 설정 →](INSTALL.ko.md)**에서 설치 방식 하나를 선택하세요.
+
+- [PyPI: pip 또는 uv tool](INSTALL.ko.md#pypi)
+- [Docker Compose + Git Clone](INSTALL.ko.md#docker-compose)
+- [Git 저장소에서 CLI 실행](INSTALL.ko.md#direct-processes)
+
+설치 가이드는 방식별 요구사항·엔진 연결·저장 경로·인증·기동·검증·유지 관리를 설명합니다.
+
+- **설정 파일:** CLI·서버 직접 실행·`compose.sh`는 `DECIFLOW_ENV_PATH`에 지정한 파일만 읽습니다.
+- **초기화:** `deciflow init`은 `~/.config/deciflow/.env`를 생성합니다. 실행 전에 이 경로를 export하세요.
+- **상세 안내:** [설정 안내](docs/configuration.ko.md#환경-파일-위치)를 참고하세요.
 
 
 ## 핵심 개념
